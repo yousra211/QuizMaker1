@@ -1,3 +1,10 @@
 import { Routes } from '@angular/router';
 
-export const routes: Routes = [];
+import { CreatorComponent } from './creators/creators.component';
+
+
+export const routes: Routes = [
+
+	{path:"creators", component:CreatorComponent}, 
+	
+];
