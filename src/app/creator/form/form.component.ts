@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CreatorService } from '../creator.service';
+import { CreatorService } from '../creators.service';
 import { NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-form',
@@ -41,7 +41,7 @@ this.activeModal.close();
 	}
   
 	ajouterCreator() {
-	  this.creatorService.addCreator(this.formCreator, this.photo)
+	  this.creatorService.addCreator(this.formCreator.value, this.photo)
 	}
   
 	updateCreator(creator:any){
@@ -58,6 +58,7 @@ this.creatorService.updateCreator(creator)
 	}
 	fileSelected(event:any){
 		const file=event.target.files[0]
-		if (file)this.photo=file
+		if (file)
+			this.photo=file
 	  }
   }
